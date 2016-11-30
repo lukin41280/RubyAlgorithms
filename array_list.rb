@@ -38,6 +38,18 @@ class ArrayList
 		end
 		counter
 	end
-	
+
+	def insert(index, element)
+		if index >= @num_of_elements
+			raise StandardError, @bounds_error
+		else
+			first_half = @new_list[0...index]
+			second_half = @new_list[index...@new_list.length]
+			first_half.concat([element])
+			first_half.concat(second_half)
+			@new_list = first_half
+		end
+	end
+
 end
 

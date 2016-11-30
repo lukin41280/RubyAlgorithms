@@ -49,4 +49,15 @@ describe ArrayList do
   		end
   	end
 
+  	describe "#insert" do
+  		it "inserts element into provided index" do
+  			list.insert(1, "cow")
+  			expect(list.new_list).to eq [nil, "cow", nil, nil]
+  		end
+
+  		it "throws error when index out of range" do
+  			expect {list.insert(3, "cow")}.to raise_error(StandardError)
+  		end
+  	end
+
 end
